@@ -22,9 +22,10 @@
         {% else %}
           <a href="{% url 'tienda:cart_detalle' %}" class="btn btn-primary"><i class="fas fa-shopping-cart"></i>&nbsp;Carrito</a>&nbsp;
           <a href="{{ logout }}" class="btn btn-primary" ><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
-        {% endif %}
+          {% endif %}
                       
       {% else %}
+        <a href="{% url 'tienda:cart_detalle' %}" class="btn btn-primary"><i class="fas fa-shopping-cart"></i>&nbsp;Carrito</a>&nbsp;
         <a href="{{ login }}" class="btn btn-primary"><i class="fas fa-user"></i>&nbsp; Login</a>&nbsp;
         <a href="{{ register }}" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;Registro</a>
       {% endif %}

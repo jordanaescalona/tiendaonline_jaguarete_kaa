@@ -205,6 +205,7 @@ def eliminar_producto(request,producto_id):
 
 
 #--------------Carrito
+@login_required(login_url='tienda:login')
 def cart_detalle(request):
     categorias = Categoria.objects.all()
     return render(request,'cart/detail.html',{
