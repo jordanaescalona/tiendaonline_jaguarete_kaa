@@ -153,7 +153,7 @@ class BuscarProductoListView(ListView):
         context['categorias'] = Categoria.objects.all() 
         return context
 
-@login_required(login_url='login')
+@login_required(login_url='usuarios/login')
 def cargar_producto(request):
     
     if request.user.is_staff: 
@@ -174,7 +174,7 @@ def cargar_producto(request):
         })
     return redirect('tienda:index')
 
-@login_required(login_url='login')
+@login_required(login_url='usuarios/login')
 def editar_producto(request,producto_id):
 
     if request.user.is_staff:
@@ -195,7 +195,7 @@ def editar_producto(request,producto_id):
             })
     return redirect('tienda:index')
 
-@login_required(login_url='login')
+@login_required(login_url='usuarios/login')
 def eliminar_producto(request,producto_id):
     if request.user.is_staff:
         un_producto = get_object_or_404(Producto,id=producto_id)
@@ -205,7 +205,7 @@ def eliminar_producto(request,producto_id):
 
 
 #--------------Carrito
-@login_required(login_url='tienda:login')
+@login_required(login_url='usuarios/login')
 def cart_detalle(request):
     categorias = Categoria.objects.all()
     return render(request,'cart/detail.html',{
